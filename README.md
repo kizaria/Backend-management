@@ -48,7 +48,7 @@
 
   #### 部分图片
   1.网站首页
-![image](https://github.com/kizaria/Backend-management/blob/master/images/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.png)
+![image](https://github.com/kizaria/Backend-management/blob/master/images/%E7%BD%91%E7%AB%99%E9%A6%96%E9%A1%B5.png)
   
   2.个人中心
 ![image](https://github.com/kizaria/Backend-management/blob/master/images/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.png)
