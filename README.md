@@ -47,16 +47,16 @@
 
 
   #### 部分图片
-  1.商品首页
-![image](https://user-images.githubusercontent.com/46672076/110750258-2c425680-827d-11eb-866f-395e779aa527.png)
+  1.网站首页
+![image](images/个人中心.png)
   
-  2.商品详情
+  2.个人中心
 ![image](https://user-images.githubusercontent.com/46672076/110750317-42e8ad80-827d-11eb-8999-32f8b9f4be70.png)
   
-  3.个人中心
+  3.在线聊天
 ![image](https://user-images.githubusercontent.com/46672076/110750402-614ea900-827d-11eb-8ec0-230600cd73b3.png)
   
-  4.在线聊天
+  4.后台管理
 ![image](https://user-images.githubusercontent.com/46672076/110750750-e8038600-827d-11eb-91ed-2491d22251c0.png)
 
 
