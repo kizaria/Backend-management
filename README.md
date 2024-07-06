@@ -6,7 +6,7 @@
 
 #### 部署系统必备
 - JDK（1.8版本,并配置系统环境变量）
-- MySQL（5.7版本）
+- MySQL（8.x 版本）
 - Navicat for MySQL（可视化）
 - Maven（换阿里源，管理Jar包）
 - Lombok插件（简化实体类）
