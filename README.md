@@ -48,15 +48,15 @@
 
   #### 部分图片
   1.网站首页
-![image](https://img-blog.csdnimg.cn/20210529165151183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUyMDMyMjAx,size_16,color_FFFFFF,t_70#pic_center)
+![image](https://github.com/kizaria/Backend-management/blob/master/images/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.png)
   
   2.个人中心
-![image](https://user-images.githubusercontent.com/46672076/110750317-42e8ad80-827d-11eb-8999-32f8b9f4be70.png)
+![image](https://github.com/kizaria/Backend-management/blob/master/images/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.png)
   
   3.在线聊天
-![image](https://user-images.githubusercontent.com/46672076/110750402-614ea900-827d-11eb-8ec0-230600cd73b3.png)
+![image](https://github.com/kizaria/Backend-management/blob/master/images/%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9.png)
   
   4.后台管理
-![image](https://user-images.githubusercontent.com/46672076/110750750-e8038600-827d-11eb-91ed-2491d22251c0.png)
+![image](https://github.com/kizaria/Backend-management/blob/master/images/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86.png)
 
 
