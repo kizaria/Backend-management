@@ -11,7 +11,7 @@ public class test {
     public static void main(String[] args) {
 
         // Please ensure that the environment variables ALIBABA_CLOUD_ACCESS_KEY_ID and ALIBABA_CLOUD_ACCESS_KEY_SECRET are set.
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI5tNS8cVBkYRrWaV23zNq", "iL1QOtm4X6QfWWhuh7fW7QHZUTm1Vd");
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "", "");
         /** use STS Token
          DefaultProfile profile = DefaultProfile.getProfile(
          "<your-region-id>",           // The region ID
