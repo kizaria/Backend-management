@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lys.web.goods_report.mapper.GoodsReportMapper">
+    <!--    查询后台举报-->
+    <select id="getList" resultType="com.lys.web.goods_report.entity.ReportVo">
+        select goods_report.report_id,goods.goods_name,goods.image,goods_report.reason, wx_user.nick_name,goods_report.status, goods_report.report_time
+        from goods,goods_report,wx_user
+        where goods.goods_id=goods_report.goods_id
+        and wx_user.user_id=goods_report.report_user
+        <if test="goodsName!=null and goodsName!=''">
+            and goods.goods_name like concat('%',#{goodsName},'%')
+        </if>
+        order by goods_report.report_time desc
+    </select>
+
+    <!--    前台我的举报-->
+    <select id="getMyReport" resultType="com.lys.web.goods.entity.Goods">
+        select goods.*,goods_report.status as report_status,goods_report.reason
+        from goods,goods_report
+        where goods.goods_id=goods_report.goods_id
+        and goods_report.report_user=#{userId}
+    </select>
+
+</mapper>

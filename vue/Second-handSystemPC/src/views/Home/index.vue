@@ -1,0 +1,23 @@
+<template>
+          <Breadcrumb/>
+  <div class="container">
+    <HomeBanner />
+  </div>
+  <HomeNew />
+  <HomeHot />
+  <HomeProduct />
+
+</template>
+
+<script setup>
+import Breadcrumb from '@/views/Home/components/Breadcrumb.vue'
+import HomeBanner from './components/HomeBanner.vue'
+import HomeNew from './components/HomeNew.vue'
+import HomeHot from './components/HomeHot.vue'
+import HomeProduct from './components/HomeProduct.vue'
+
+</script>
+
+<style lang="scss" scoped>
+
+</style>

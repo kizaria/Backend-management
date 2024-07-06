@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lys.web.goods_order.mapper.GoodsOrderMapper">
+    <!-- 查询我的订单   -->
+    <select id="getMyOrder" resultType="com.lys.web.goods.entity.Goods">
+        select goods.* ,goods_order.order_id,goods_order.create_time as sell_time , goods_order.price,goods_order.order_status,goods_order.order_pay,goods_order.order_receiving,goods_order.order_express
+        from goods,goods_order
+        where goods_order.goods_id=goods.goods_id
+        and goods_order.delete_status='0'
+        and goods_order.order_user=#{userId}
+    </select>
+
+    <!--    查询出售订单-->
+    <select id="getSellOrder" resultType="com.lys.web.goods.entity.Goods">
+        select goods.* ,goods_order.order_id,goods_order.create_time as sell_time , goods_order.price,goods_order.order_status,goods_order.order_pay,goods_order.order_receiving,goods_order.order_express
+        from goods,goods_order
+        where goods_order.goods_id=goods.goods_id
+        and goods_order.delete_status='0'
+        and goods.user_id=#{userId}
+    </select>
+
+    <!--    查询订单-->
+    <select id="getList" resultType="com.lys.web.goods_order.entity.OrderVo">
+        select goods.user_id, goods_order.order_id,goods.goods_name,goods.image,goods.goods_price,goods_order.price,wx_user.nick_name,goods_order.create_time,
+               goods_order.order_status
+        from goods_order,goods,wx_user
+        where goods.goods_id=goods_order.goods_id
+        and wx_user.user_id=goods_order.order_user
+        <if test="goodsName!=null and goodsName!=''">
+            and goods.goods_name like concat('%',#{goodsName},'%')
+        </if>
+        and goods_order.delete_status='0'
+        order by goods_order.create_time desc
+    </select>
+
+    <!--    订单分析图-->
+    <select id="getorderChart" resultType="com.lys.web.chart.entity.orderChart">
+        select date(create_time) as day, count(*) as orders
+        from goods_order
+        group by day
+        order by day;
+    </select>
+
+</mapper>

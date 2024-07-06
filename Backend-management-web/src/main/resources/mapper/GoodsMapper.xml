@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lys.web.goods.mapper.GoodsMapper">
+
+    <!--    首页饼图-->
+    <select id="getList" resultType="com.lys.web.home.entity.ChartVo">
+        select goods_category.category_name as name,COUNT(goods_category.category_name) as value
+        from goods,goods_category
+        where goods.category_id=goods_category.category_id
+        GROUP BY  goods_category.category_name
+    </select>
+
+    <!--    导出数据-->
+    <select id="exportGoods" resultType="com.lys.web.goods.entity.GoodsExcel">
+        select goods.goods_id,goods.goods_name,
+               (case goods.type when '0' then '全部' when '1' then '自提'  when '1' then '快递' end) as type,
+               goods_category.category_name,
+               goods.goods_desc,
+               goods.goods_price,
+               goods.user_name,
+               goods.phone,
+               goods.wx_num,
+               goods.address,
+               (case goods.status when '0' then '上架' when '1' then '下架' end ) as status,
+               (case goods.sell_status when '0' then '未出售' when '1' then '已出售' end) as sell_status,
+               (case goods.set_index when '0' then '未推荐首页' when '1' then '已推荐首页' end) as set_index,
+               (case goods.delete_status when '0' then '未删除' when '1' then '已删除' end) as delete_status,
+               (case goods.auditing when '0' then '待审核' when '1' then '未通过' when '2' then '已通过' end) as auditing,
+               goods.create_time
+        from goods,goods_category
+        where goods.category_id=goods_category.category_id
+    </select>
+</mapper>

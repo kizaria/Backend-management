@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--    mapper 根节点
+        namespace   命名空间，一般情况下一个mapper映射文件对应不同的命名空间，利于管理和维护
+            书写：默认情况下可以随意输入，但是如果使用接口绑定的方式就必须要输入对应的接口的完整限定名
+        namespace如果是基于statementId的方式去执行SQL就可以随便写
+        如果是基于接口绑定的方式就需要输入相应接口的完整限定名-->
+<mapper namespace="com.lys.web.sys_menu.mapper.SysMenuMapper">
+    <select id="getMenuByUserId" resultType="com.lys.web.sys_menu.entity.SysMenu">
+        select m.* from user_menu as um
+        left join sys_menu as m
+        on um.menu_id=m.menu_id
+        where  um.user_id=#{userId}
+    </select>
+</mapper>

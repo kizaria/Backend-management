@@ -1,0 +1,25 @@
+@startuml
+entity "用户账号" as UserAccount
+entity "商品交易" as Trade
+entity "发布商品" as PostProduct
+entity "发布求购信息" as PostRequest
+entity "下单商品" as PlaceOrder
+entity "查看公告" as ViewAnnouncement
+entity "查看商品分类" as ViewCategory
+entity "查看商品收藏" as ViewFavorites
+entity "查看订单" as ViewOrders
+entity "查看审核通知" as ViewNotifications
+
+UserAccount --> PostProduct : "用户发布"
+UserAccount --> PostRequest : "发布求购"
+UserAccount --> PlaceOrder : "下单"
+UserAccount --> ViewFavorites : "查看收藏"
+UserAccount --> ViewOrders : "查看订单"
+UserAccount --> ViewNotifications : "接收通知"
+PostProduct --> Trade : "商品审核通过"
+PostRequest --> Trade : "求购信息发布"
+PlaceOrder --> Trade : "完成交易"
+Trade --> ViewCategory : "商品分类查看"
+ViewAnnouncement -down-> UserAccount : "发布公告"
+ViewCategory --> Trade : "分类浏览"
+@enduml

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lys.web.goods_help.mapper.GoodsHelpMapper">
+    <!--    查询前台求购信息-->
+    <select id="getHelp" resultType="com.lys.web.goods_help.entity.GoodsHelp">
+        select goods_help.id, goods_help.title,goods_help.content,goods_help.time,goods_help.status,goods_help.user_id,goods_help.solved,goods_help.img,wx_user.picture,wx_user.nick_name
+        from goods_help,wx_user
+        where goods_help.user_id=wx_user.user_id
+        and goods_help.status='2'
+    </select>
+
+    <!--    根据id查询求购信息-->
+    <select id="getHelpById" resultType="com.lys.web.goods_help.entity.GoodsHelp">
+        select goods_help.id, goods_help.title,goods_help.content,goods_help.time,goods_help.status,goods_help.user_id,goods_help.solved,goods_help.img,wx_user.picture,wx_user.nick_name
+        from goods_help,wx_user
+        where goods_help.user_id=wx_user.user_id
+        and goods_help.status='2'
+        and goods_help.id=#{id}
+    </select>
+
+    <!--    根据标题模糊搜索求购信息-->
+    <select id="searchHelp" resultType="com.lys.web.goods_help.entity.GoodsHelp">
+        select goods_help.id, goods_help.title,goods_help.content,goods_help.time,goods_help.status,goods_help.user_id,goods_help.solved,goods_help.img,wx_user.picture,wx_user.nick_name
+        from goods_help,wx_user
+        where goods_help.user_id=wx_user.user_id
+        and goods_help.status='2'
+        <if test="title!=null and title!=''">
+            and goods_help.title like concat('%',#{title},'%')
+        </if>
+    </select>
+
+</mapper>

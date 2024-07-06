@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.ImsingleMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Imsingle">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="fromuser" column="fromuser" jdbcType="VARCHAR"/>
+            <result property="fromavater" column="fromavater" jdbcType="VARCHAR"/>
+            <result property="time" column="time" jdbcType="TIMESTAMP"/>
+            <result property="touser" column="touser" jdbcType="VARCHAR"/>
+            <result property="toavater" column="toavater" jdbcType="VARCHAR"/>
+            <result property="readed" column="readed" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,content,fromuser,
+        fromavater,time,touser,
+        toavater,readed
+    </sql>
+</mapper>

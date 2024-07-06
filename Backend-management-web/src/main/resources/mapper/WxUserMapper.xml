@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lys.web.wx_user.mapper.WxUserMapper">
+    <!--    用户分析图-->
+    <select id="getUserChart" resultType="com.lys.web.chart.entity.userChart">
+        select date(time) as day, count(*) as users
+        from wx_user
+        group by day
+        order by day;
+    </select>
+</mapper>

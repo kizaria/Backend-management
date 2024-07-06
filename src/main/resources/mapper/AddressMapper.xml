@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.AddressMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Address">
+            <id property="addressid" column="addressId" jdbcType="INTEGER"/>
+            <result property="userid" column="userId" jdbcType="INTEGER"/>
+            <result property="nickname" column="nickName" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="addressdesc" column="addressDesc" jdbcType="VARCHAR"/>
+            <result property="isdefault" column="isDefault" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        addressId,userId,nickName,
+        phone,addressDesc,isDefault
+    </sql>
+</mapper>

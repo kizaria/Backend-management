@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.FriendMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Friend">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="userid" column="userId" jdbcType="INTEGER"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="useravatar" column="userAvatar" jdbcType="VARCHAR"/>
+            <result property="friendid" column="friendId" jdbcType="INTEGER"/>
+            <result property="friendname" column="friendname" jdbcType="VARCHAR"/>
+            <result property="friendavatar" column="friendAvatar" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userId,username,
+        userAvatar,friendId,friendname,
+        friendAvatar,status
+    </sql>
+</mapper>

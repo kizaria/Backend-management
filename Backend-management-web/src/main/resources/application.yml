@@ -1,0 +1,57 @@
+server:
+  port: 8090
+spring:
+  application:
+    #应用的名称，可选
+    name: reggie_take_out
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/Second-hand-transaction?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123789
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启日志
+  global-config:
+    db-config:
+      #配置mybatis plus 在更新时只更新非空和非null的字段
+      update-strategy: not_empty
+
+#图片上传
+web:
+  uploadpath: D:/images/  #图片上传的路径
+  load-path: file:D://images/  #图片加载的路径
+
+logging:
+  pattern:
+    console: '%d[yyyy-MM-dd] [%thread] %-5level %logger - %msg%n'
+
+#jwt认证
+jwt:
+  #发布者
+  issuer: lys
+  #秘钥
+  secret: com.lys
+  #过期时间
+  expiration: 30
+
+alipay:
+  appId: 9021000136627123
+  appPrivateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCA2Dh2o0hLJeVaAzqtkLhpJYEXrkHq7DI+TN8Q+FukzQdDw60cBVh0lfhnU6dcCDQeI3omvAODt9XmnJlyrogeRRM0l8LAlR2/u4XdqKDBubFWNkoidur414e3BEGQZZe+TI/SSM+I2vk8FoSfDtuwS1nE1ffMCnpyh71tuQ7WI2fKTafRoqAc0siF6d8QbhWKaLvklP677OjZf+eG/U51J1spGAvCJxzGN1rJE6+pyQvZPJwvNLzVO2yYfELE/ACGKAKL1KGa7ApOagcRAm9Qtcml1fFs9qfEonD1SmVWss0IcsQJ5LZlHibTraZfgygqw7sO1JdZJCP/G4Ja1QkvAgMBAAECggEAbNe7YyVuleUOieq+cA8YaeK/2gRgNReRHiYMLqbPrDlzkKBFpa0yW1KxhIAbmlhnxqoLr5sWkPgEn4rc6g9cd828eqpVYCDX/7dnT6f7HYxDreOw3sp8lvhj8oyK4nOgK6c7u9W8VA0/jK4tHL0NgzE0RV7HtTuI0yWuNXmmeeg8Yu9jt4XvB4wY2cmFehNwcCqjQgF/W/qWQzPlVEWEus5BK5mgVv/uFA8dCsjUiHzWsR9UL9v7FXG1Vw8v1cCwu5yu+6AxwbDX65JVceS4+7EEwUXjvFDlj/IYjIZ+36pbaa/WCqa2kKMvkYbC32t0+E8MyfP+ijvnyQCAVv6ryQKBgQDJwNeiTSrhWsQC974k3y98L+OIkNIuvCs3m5X/UIK7atDieLxDYnZGh2xjVrMvT5dVvW1BZCxALbQl8jU0y/VXKB+8PHEw35159MuDWjsAireyKL+9q/IhxjsgR3MHiygUHoz6SU8RKvy2fzRZFWQPt+2LI8Dg0Au8ze6AcqUEGwKBgQCjfOagoX6QIul3xBEWSnzLYM3T//mJQiv4SU+qY4gKHxcp++glM+6u0iVUL84w6ila27db8ZB8BNn7eSF4khtL32pQrP3mSyAOpOppyAj+I7LNINf6AhfigLXR0OaDSmMacYToIBE1KYNVRrAmeFGPccJZgumdFXXRTgAr2paYfQKBgH4Koux7hzF4kgJEoh7I7BKKnHyh9R1LYzh/U+tIchQCPHNv+DWk2r1fN2CsNo91Ctd+2zXCDj8eDnCya3kLfr+vinv/yrs8yFX7j/UEtt20y+RavscRF9jvzdpxqLRqxGQlXe+zQtk34N9mgt6wlW2Ye6e0c3g/oUWX5cuLU/pHAoGAJfuMsWETwHT7/OFGfwFLQQz6hPiBhwwinwqZQaLiJkfW3+AwrQQFvgQAvDBnHSIp/Xvye6ABy25tHmmkBxka0mPTlW67hleJ2R0jgPQCctjkX5fz1ZfK6Mqyc06vX21W3Pvmvu9EUC+W3acQob9uY38wgg9SKzajKr+OdqHQPxkCgYALEkTUXnK1th89YdxsqeqrW8dNU7ZXdfZ1/qktcXO0pgFjTzpPZsRXInn8JblwfbEjmOREiZZ7jIw8kmtYXhc8PVwt/CduQ4UAt6osWg1GLjuNfX5ohY3xiK7KxPDwCDuA8IvOpWD/5LiMJ/Rgmte47ziVUUk2OBMstD48KbYTeQ==
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtNxCz/WYx8vXKjNQPwFK/Is1RqUGgQ048GcVecQ6jS5YApn83vjVppAjWg85gK8cFG/7qQfqlZ25McVzrfJn9N2jqKeFxfbAYH6LH2eEYAwMJzvVAAGz9z8yLpkHsj4G/hqvcd/DBnA12JVKV/ptdHa94w3NV1b7ekavj3WnCE5k7G1MP/6//thAVIHiAo3/aC8lYXwoj016vTmxC9Xi/A4IkIAQZrI+oLhfmqhK5dd8TKKnsNxByx9987b04PajwZtEPq7wj30U2ThSI9NCDiUpU0xoJKKTybHcK1HxHahxKCRUGjzVYKY65W4Zrpzws5CeNDRKh5db6ZfY4k0RHQIDAQAB
+  # 支付成功回调地址
+  notifyUrl:
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lys.web.goods_collect.mapper.GoodsCollectMapper">
+
+    <!--前台我的收藏-->
+    <select id="getMyCollect" resultType="com.lys.web.goods.entity.Goods">
+        select goods.*
+        from goods,goods_collect
+        where goods.goods_id=goods_collect.goods_id
+        and goods_collect.user_id=#{userId}
+    </select>
+
+    <!-- 新版网页按照收藏人数排序，首页-->
+    <select id="getSumCollect" resultType="com.lys.web.goods.entity.Goods">
+                  select  goods_collect.goods_id
+                  from goods_collect,goods
+                  group by goods_collect.goods_id
+                  order by count(goods_collect.goods_id) desc
+    </select>
+    <!--  新版网页收藏人数-->
+    <select id="getCount" resultType="int">
+        select count( goods_collect.goods_id)
+        from goods_collect
+        group by goods_collect.goods_id
+        having goods_collect.goods_id=#{goodsId}
+    </select>
+
+</mapper>

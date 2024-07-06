@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.GoodsOrderMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.GoodsOrder">
+            <id property="orderId" column="order_id" jdbcType="BIGINT"/>
+            <result property="goodsId" column="goods_id" jdbcType="INTEGER"/>
+            <result property="goodsName" column="goods_name" jdbcType="VARCHAR"/>
+            <result property="orderUser" column="order_user" jdbcType="INTEGER"/>
+            <result property="price" column="price" jdbcType="DECIMAL"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="addressid" column="addressId" jdbcType="INTEGER"/>
+            <result property="deleteStatus" column="delete_status" jdbcType="VARCHAR"/>
+            <result property="orderStatus" column="order_status" jdbcType="VARCHAR"/>
+            <result property="orderPay" column="order_pay" jdbcType="VARCHAR"/>
+            <result property="orderReceiving" column="order_receiving" jdbcType="VARCHAR"/>
+            <result property="orderExpress" column="order_express" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        order_id,goods_id,goods_name,
+        order_user,price,create_time,
+        addressId,delete_status,order_status,
+        order_pay,order_receiving,order_express
+    </sql>
+</mapper>
